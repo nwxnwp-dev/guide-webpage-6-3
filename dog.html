@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MeowWorld - World of Cats</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+
+    <style>
+        :root {
+            --pastel-bg: #FFF0F5;      
+            --pastel-nav: #BDE0FE;     
+            --pastel-pink: #FFAFCC;    
+            --pastel-hover: #FF9EBB;
+            --text-soft: #6D5D6E;      
+        }
+
+        body {
+            background-color: var(--pastel-bg);
+            font-family: 'Itim', sans-serif;
+            color: var(--text-soft);
+        }
+
+        /* ปุ่มเปิดเมนู */
+        .btn-menu {
+            background-color: var(--pastel-pink);
+            color: white;
+            border-radius: 15px;
+            border: none;
+            padding: 8px 15px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 175, 204, 0.4);
+        }
+        .btn-menu:hover {
+            background-color: var(--pastel-hover);
+            transform: scale(1.05);
+            color: white;
+        }
+
+        /* สไตล์ของเมนูสไลด์ (Sidebar) */
+        .pastel-sidebar {
+            background-color: #FFFFFF;
+            border-right: 4px dashed var(--pastel-pink);
+        }
+        .cute-nav-link {
+            color: var(--text-soft);
+            font-weight: bold;
+            transition: 0.3s;
+            border-radius: 20px;
+        }
+        .cute-nav-link:hover, .cute-nav-link.active {
+            background-color: var(--pastel-pink);
+            color: white !important;
+            transform: translateX(10px);
+        }
+
+        .hero-section {
+            background-color: #FFFFFF;
+            border: 3px dashed var(--pastel-pink);
+            color: var(--pastel-pink);
+        }
+
+        .card {
+            border: none;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 175, 204, 0.15);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(255, 175, 204, 0.4);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body h5 {
+            color: var(--pastel-pink);
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: var(--pastel-pink);
+            color: white;
+            border-radius: 25px;
+            border: none;
+            padding: 10px 25px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: var(--pastel-hover);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .carousel-img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+        #catCarousel {
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(189, 224, 254, 0.5);
+        }
+
+        .pagination .page-link {
+            color: var(--pastel-pink);
+            border: 2px solid #F8DCE3;
+            border-radius: 50%;
+            margin: 0 5px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .pagination .page-link:hover {
+            background-color: #F8DCE3;
+            color: white;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: var(--pastel-pink);
+            border-color: var(--pastel-pink);
+            color: white;
+        }
+        .pagination .page-item.disabled .page-link {
+            border: none;
+            color: #ccc;
+            background-color: transparent;
+            width: auto;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-4 mb-3 d-flex align-items-center">
+    <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+        <i class="bi bi-list fs-3"></i>
+    </button>
+    <a class="ms-3 fs-2 fw-bold" href="dog.html" style="color: #5C4D43; text-decoration: none;">
+        <i class="bi bi-github" style="color: var(--pastel-pink);"></i> MeowWorld
+    </a>
+</div>
+
+<div class="offcanvas offcanvas-start pastel-sidebar" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+  <div class="offcanvas-header pb-0 mt-3">
+    <h4 class="offcanvas-title fw-bold" id="sidebarMenuLabel" style="color: var(--pastel-pink);">
+        <i class="bi bi-stars"></i> เมนูหลัก
+    </h4>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <hr style="color: var(--pastel-pink);">
+    <ul class="nav flex-column fs-5 mt-3">
+      <li class="nav-item mb-2">
+        <a class="nav-link cute-nav-link active px-3 py-2" href="dog.html">
+            <i class="bi bi-house-door me-2"></i> หน้าแรก
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link cute-nav-link px-3 py-2" href="page2.html">
+            <i class="bi bi-collection me-2"></i> สายพันธุ์แมวเพิ่มเติม
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link cute-nav-link px-3 py-2" href="#">
+            <i class="bi bi-info-circle me-2"></i> เกี่ยวกับเรา
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container my-4">
+    <div class="p-5 text-center rounded-4 shadow-sm hero-section">
+        <h1 class="display-5 fw-bold"><i class="bi bi-stars"></i> สายพันธุ์แมวและอุปนิสัยต่างๆ <i class="bi bi-heart-fill" style="color:#FFAFCC;"></i></h1>
+        <p class="col-lg-8 mx-auto fs-5 mt-3" style="color: var(--text-soft);">
+            ยินดีต้อนรับสู่โลกของแมวเหมียว! มาทำความรู้จักกับหลากหลายสายพันธุ์ที่คุณอาจตกหลุมรัก
+        </p>
+        <button class="btn btn-custom btn-lg mt-3" type="button">
+            <i class="bi bi-search"></i> ค้นหาสายพันธุ์
+        </button>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div id="catCarousel" class="carousel slide overflow-hidden" data-bs-ride="carousel">
+      
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#catCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000"> 
+          <img src="https://www.purina.com/sites/default/files/2025-08/maine_coon_cat_3.jpg" class="d-block w-100 carousel-img img-fluid" alt="Maine Coon">
+          <div class="carousel-caption d-none d-md-block bg-white bg-opacity-75 rounded-4 text-dark p-2" style="backdrop-filter: blur(5px);">
+            <h5 class="fw-bold mb-1" style="color: var(--pastel-pink);">เมนคูน (Maine Coon)</h5>
+            <p class="mb-0">แมวตัวใหญ่ ใจดี เป็นมิตรกับทุกคน</p>
+          </div>
+        </div>
+        
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2016/10_October/persians/Persian+Cat+Facts+History+Personality+and+Care+_+ASPCA+Pet+Health+Insurance+_+white+Persian+cat+resting+on+a+brown+sofa-min.jpg" class="d-block w-100 carousel-img img-fluid" alt="Persian Cat">
+          <div class="carousel-caption d-none d-md-block bg-white bg-opacity-75 rounded-4 text-dark p-2" style="backdrop-filter: blur(5px);">
+            <h5 class="fw-bold mb-1" style="color: var(--pastel-pink);">เปอร์เซีย (Persian)</h5>
+            <p class="mb-0">ราชินีแมวขนยาว หน้ากลม ชอบความสงบ</p>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="https://rawznaturalpetfood.com/wp-content/uploads/2022/04/rawz_bengal-cat-appearance.jpg" class="d-block w-100 carousel-img img-fluid" alt="Bengal Cat">
+          <div class="carousel-caption d-none d-md-block bg-white bg-opacity-75 rounded-4 text-dark p-2" style="backdrop-filter: blur(5px);">
+            <h5 class="fw-bold mb-1" style="color: var(--pastel-pink);">เบงกอล (Bengal)</h5>
+            <p class="mb-0">ลวดลายเสือดาวแสนสวย พลังงานล้นเหลือ</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>
+
+<div class="container mb-4">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2016/10_October/persians/Persian+Cat+Facts+History+Personality+and+Care+_+ASPCA+Pet+Health+Insurance+_+white+Persian+cat+resting+on+a+brown+sofa-min.jpg" class="card-img-top img-fluid" alt="Persian Cat">
+                <div class="card-body text-center">
+                    <h5>เปอร์เซีย (Persian)</h5>
+                    <p class="text-muted">ขนยาว หน้ากลม ชอบความสงบ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqtLzQ_RxHKl50QDpVWWV-Zwh8mQhQWurQyLCEBCiqCqQmK5wGqjM4GFPi2RQ8Hl9pYl6OrYKyBL5edP8428i1XozCj4oaE4jVveFCuA&s=10" class="card-img-top img-fluid" alt="Siamese Cat">
+                <div class="card-body text-center">
+                    <h5>วิเชียรมาศ (Siamese)</h5>
+                    <p class="text-muted">ฉลาด ขี้อ้อน ติดเจ้าของ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3cAVWFPNf2r1VE3cYCx6pEdxsVpCPjzdYA&s" class="card-img-top img-fluid" alt="British Shorthair">
+                <div class="card-body text-center">
+                    <h5>บริติชช็อตแฮร์</h5>
+                    <p class="text-muted">สุภาพ เลี้ยงง่าย</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://www.purina.com/sites/default/files/2025-08/maine_coon_cat_3.jpg" class="card-img-top img-fluid" alt="Maine Coon">
+                <div class="card-body text-center">
+                    <h5>เมนคูน</h5>
+                    <p class="text-muted">ตัวใหญ่ ใจดี เป็นมิตร</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://rawznaturalpetfood.com/wp-content/uploads/2022/04/rawz_bengal-cat-appearance.jpg" class="card-img-top img-fluid" alt="Bengal Cat">
+                <div class="card-body text-center">
+                    <h5>เบงกอล</h5>
+                    <p class="text-muted">ลายสวย ซน ว่องไว</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://cdn.wamiz.fr/cdn-cgi/image/format=auto,quality=80,width=720,height=405,fit=cover/animal/breed/cat/adult/6687c811719fb656583283.jpg" class="card-img-top img-fluid" alt="Scottish Fold">
+                <div class="card-body text-center">
+                    <h5>สก็อตติช โฟลด์</h5>
+                    <p class="text-muted">หูพับ น่ารัก ขี้อ้อน</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQllvw91-N3cjtvGV3J6m-vY7NsonJ5CyEZtg&s" class="card-img-top img-fluid" alt="Ragdoll">
+                <div class="card-body text-center">
+                    <h5>แร็กดอลล์</h5>
+                    <p class="text-muted">อ่อนโยน เชื่องมาก</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://i.guim.co.uk/img/media/6bddcc4d11116c1d28a452023ad5523012b2f572/146_619_4372_2623/master/4372.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=62620d518227d5e74123cfc09645de10" class="card-img-top img-fluid" alt="Sphynx">
+                <div class="card-body text-center">
+                    <h5>สฟิงซ์</h5>
+                    <p class="text-muted">ไม่มีขน ขี้เล่น</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://cartoontest.ketshopweb.com/upload-img/pic/67181635e023e74008313ebf3312f120.jpg" class="card-img-top img-fluid" alt="American Shorthair">
+                <div class="card-body text-center">
+                    <h5>อเมริกันช็อตแฮร์</h5>
+                    <p class="text-muted">แข็งแรง เป็นมิตร</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5 mt-4">
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">ย้อนกลับ</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="dog.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="page2.html">2</a></li>
+            <li class="page-item">
+                <a class="page-link" href="page2.html" style="border-radius: 15px; width: auto; padding: 0 15px;">ถัดไป</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cat Breed - Page 2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+
+    <style>
+        :root {
+            --pastel-bg: #FFF0F5;      
+            --pastel-nav: #BDE0FE;     
+            --pastel-pink: #FFAFCC;    
+            --pastel-hover: #FF9EBB;
+            --text-soft: #6D5D6E;      
+        }
+
+        body {
+            background-color: var(--pastel-bg);
+            font-family: 'Itim', sans-serif;
+            color: var(--text-soft);
+        }
+
+        /* ปุ่มเปิดเมนู */
+        .btn-menu {
+            background-color: var(--pastel-nav);
+            color: #5C4D43;
+            border-radius: 15px;
+            border: none;
+            padding: 8px 15px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(189, 224, 254, 0.4);
+        }
+        .btn-menu:hover {
+            background-color: #A2D2FF;
+            transform: scale(1.05);
+        }
+
+        /* สไตล์ของเมนูสไลด์ (Sidebar) */
+        .pastel-sidebar {
+            background-color: #FFFFFF;
+            border-right: 4px dashed var(--pastel-nav);
+        }
+        .cute-nav-link {
+            color: var(--text-soft);
+            font-weight: bold;
+            transition: 0.3s;
+            border-radius: 20px;
+        }
+        .cute-nav-link:hover, .cute-nav-link.active {
+            background-color: var(--pastel-nav);
+            color: #5C4D43 !important;
+            transform: translateX(10px);
+        }
+
+        .header-box {
+            background-color: #FFFFFF;
+            border: 3px dashed var(--pastel-nav);
+            color: var(--pastel-pink);
+        }
+
+        .card {
+            border: none;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(189, 224, 254, 0.2);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(189, 224, 254, 0.5);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body h5 {
+            color: var(--pastel-pink);
+            font-weight: bold;
+        }
+
+        .pagination .page-link {
+            color: var(--pastel-pink);
+            border: 2px solid #F8DCE3;
+            border-radius: 50%;
+            margin: 0 5px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .pagination .page-link:hover {
+            background-color: #F8DCE3;
+            color: white;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: var(--pastel-pink);
+            border-color: var(--pastel-pink);
+            color: white;
+        }
+        .pagination .page-item.disabled .page-link {
+            border: none;
+            color: #ccc;
+            background-color: transparent;
+            width: auto;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-4 mb-3 d-flex align-items-center">
+    <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+        <i class="bi bi-list fs-3"></i>
+    </button>
+    <a class="ms-3 fs-2 fw-bold" href="dog.html" style="color: #5C4D43; text-decoration: none;">
+        <i class="bi bi-github" style="color: var(--pastel-nav);"></i> MeowWorld
+    </a>
+</div>
+
+<div class="offcanvas offcanvas-start pastel-sidebar" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+  <div class="offcanvas-header pb-0 mt-3">
+    <h4 class="offcanvas-title fw-bold" id="sidebarMenuLabel" style="color: #5C4D43;">
+        <i class="bi bi-stars"></i> เมนูหลัก
+    </h4>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <hr style="color: var(--pastel-nav);">
+    <ul class="nav flex-column fs-5 mt-3">
+      <li class="nav-item mb-2">
+        <a class="nav-link cute-nav-link px-3 py-2" href="dog.html">
+            <i class="bi bi-house-door me-2"></i> หน้าแรก
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link cute-nav-link active px-3 py-2" href="page2.html">
+            <i class="bi bi-collection me-2"></i> สายพันธุ์แมวเพิ่มเติม
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link cute-nav-link px-3 py-2" href="#">
+            <i class="bi bi-info-circle me-2"></i> เกี่ยวกับเรา
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container my-4 text-center">
+    <div class="p-4 rounded-4 shadow-sm header-box">
+        <h2 class="mb-0 fw-bold"><i class="bi bi-collection"></i> สายพันธุ์แมวเพิ่มเติม (หน้าที่ 2)</h2>
+    </div>
+</div>
+
+<div class="container mb-4">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WFXZ8ms2_080cEIG1PcBoLWA9sg8BnI5Kg&s" class="card-img-top img-fluid" alt="Russian Blue">
+                <div class="card-body text-center">
+                    <h5>รัสเซียนบลู (Russian Blue)</h5>
+                    <p class="text-muted">ขนสีเทาอมฟ้า ตาสีเขียว ขี้อายแต่น่ารัก</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://cdn.shopify.com/s/files/1/0568/0450/7691/files/ABYSSINIAN-CAT-1_600x600.jpg?v=1713881706" class="card-img-top img-fluid" alt="Abyssinian">
+                <div class="card-body text-center">
+                    <h5>อะบิสซิเนียน (Abyssinian)</h5>
+                    <p class="text-muted">ปราดเปรียว รักสนุก ชอบปีนป่าย</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUB7CuGXZw6BO7kcs4A1OF_Ub9aLJlONHDKL8u-ZjLDe8sfy68SYI8q4kAxDG5RjsYw1bylTuw8k65cu56iYcenciJG_dL_pTuQ_tmjw&s=10" class="card-img-top img-fluid" alt="Himalayan">
+                <div class="card-body text-center">
+                    <h5>หิมาลายัน (Himalayan)</h5>
+                    <p class="text-muted">ขนยาวแบบเปอร์เซีย ลายแบบวิเชียรมาศ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5 mt-4">
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="dog.html" style="border-radius: 15px; width: auto; padding: 0 15px;">ย้อนกลับ</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="dog.html">1</a></li>
+            <li class="page-item active"><a class="page-link" href="page2.html">2</a></li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">ถัดไป</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
